@@ -3,7 +3,7 @@
     @keyframes minute_hand_animation__tr{0%{transform:translate(318.98px,682.16px) rotate(0deg)}to{transform:translate(318.98px,682.16px) rotate(21600deg)}}@keyframes hour_hand_animation__tr{0%{transform:translate(318.98px,682.16px) rotate(0deg)}to{transform:translate(318.98px,682.16px) rotate(360deg)}}#minute_hand_animation{animation:minute_hand_animation__tr 30000ms linear infinite normal forwards}#hour_hand_animation{animation:hour_hand_animation__tr 30000ms linear infinite normal forwards}
   </style>
   <g id="background" transform="matrix(4 0 0 4 -890.486 -2343.246)">
-    <path id="square" d="M414.87 682.19v72.19c0 11.03-8.32 21.11-19.18 23.18-1.61.31-3.27.48-4.9.48-47.97.03-95.93.02-143.9.02-11.76 0-22.02-9.02-23.56-20.72a23.27 23.27 0 01-.23-3.12c-.01-48.09-.01-96.18-.01-144.26 0-11.03 8.32-21.12 19.18-23.18 1.61-.31 3.27-.48 4.9-.48 48.01-.02 96.02-.02 144.02-.02 11.03 0 21.13 8.33 23.18 19.18.3 1.61.48 3.27.48 4.9.03 23.94.02 47.88.02 71.83z" fill="#6B7280" stroke="none" stroke-width="1"/>
+    <path id="square" d="M414.87 682.19v72.19c0 11.03-8.32 21.11-19.18 23.18-1.61.31-3.27.48-4.9.48-47.97.03-95.93.02-143.9.02-11.76 0-22.02-9.02-23.56-20.72a23.27 23.27 0 01-.23-3.12c-.01-48.09-.01-96.18-.01-144.26 0-11.03 8.32-21.12 19.18-23.18 1.61-.31 3.27-.48 4.9-.48 48.01-.02 96.02-.02 144.02-.02 11.03 0 21.13 8.33 23.18 19.18.3 1.61.48 3.27.48 4.9.03 23.94.02 47.88.02 71.83z" fill="#9CAF88" stroke="none" stroke-width="1"/>
   </g>
   <g id="clock_top" transform="matrix(4 0 0 4 -890.458 -2343.236)">
     <g id="clock_group">

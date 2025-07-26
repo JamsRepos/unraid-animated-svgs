@@ -58,7 +58,7 @@ Choose from 10 different color themes, each using a single uniform color for con
 | **Slate Gray** | #475569 | Cool slate gray tones | <img src="Color%20Packs/Slate%20Gray/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Slate%20Gray/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Slate%20Gray/plex_always.svg" width="24" height="24" /> |
 | **Golden** | #EAB308 | Rich golden yellow tones | <img src="Color%20Packs/Golden/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Golden/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Golden/plex_always.svg" width="24" height="24" /> |
 | **Cobalt Blue** | #2563EB | Deep cobalt blue tones | <img src="Color%20Packs/Cobalt%20Blue/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Cobalt%20Blue/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Cobalt%20Blue/plex_always.svg" width="24" height="24" /> |
-| **Sage Green** | #6B7280 | Soft sage green tones | <img src="Color%20Packs/Sage%20Green/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Sage%20Green/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Sage%20Green/plex_always.svg" width="24" height="24" /> |
+| **Sage Green** | #9CAF88 | Soft sage green tones | <img src="Color%20Packs/Sage%20Green/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Sage%20Green/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Sage%20Green/plex_always.svg" width="24" height="24" /> |
 
 ## 📁 Directory Structure
 
