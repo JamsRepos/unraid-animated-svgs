@@ -149,6 +149,46 @@
       "name": "Sage Green",
       "description": "Soft sage green tones",
       "color": "#9CAF88"
+    },
+    "overseerr_indigo": {
+      "name": "Overseerr Indigo",
+      "description": "Beautiful indigo color matching the Overseerr/Jellyseerr theme",
+      "color": "#4F46E5"
+    },
+    "nord_teal": {
+      "name": "Nord Teal",
+      "description": "Beautiful teal accent color from the Nord theme",
+      "color": "#79B8CA"
+    },
+    "dracula_purple": {
+      "name": "Dracula Purple",
+      "description": "Vibrant purple from the Dracula theme",
+      "color": "#BD93F9"
+    },
+    "aquamarine_teal": {
+      "name": "Aquamarine Teal",
+      "description": "Fresh aquamarine color from the Aquamarine theme",
+      "color": "#7FDBDA"
+    },
+    "space_gray": {
+      "name": "Space Gray",
+      "description": "Sophisticated gray from the Space Gray theme",
+      "color": "#4A4A4A"
+    },
+    "plex_orange": {
+      "name": "Plex Orange",
+      "description": "Classic orange from the Plex theme",
+      "color": "#E5A00D"
+    },
+    "hotline_pink": {
+      "name": "Hotline Pink",
+      "description": "Vibrant pink from the Hotline theme",
+      "color": "#FF6B9D"
+    },
+    "maroon_red": {
+      "name": "Maroon Red",
+      "description": "Deep maroon from the Maroon theme",
+      "color": "#8B0000"
     }
   },
   "defaultPack": "original"

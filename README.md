@@ -8,7 +8,7 @@ A collection of animated SVG icons designed specifically for the **FolderView pl
 - **Two Animation Styles**:
   - **Always Animate**: Icons that continuously animate (suffix: `_always.svg`)
   - **Animate on Hover**: Icons that animate only when hovered over (suffix: `_hover.svg`)
-- **30 Color Packs**: Multiple color themes with uniform single-color design
+- **39 Color Packs**: Multiple color themes with uniform single-color design
 - **High Quality**: Vector graphics that scale perfectly at any size
 - **Lightweight**: Small file sizes for fast loading
 
@@ -25,7 +25,7 @@ Choose from 10 different color themes, each using a single uniform color for con
 
 ### 🎨 Available Color Packs
 
-**All 30 Color Variations Available!** Here's the complete collection:
+**All 39 Color Variations Available!** Here's the complete collection:
 
 | Pack | Color | Description | Example Icons |
 |------|-------|-------------|---------------|
@@ -59,6 +59,21 @@ Choose from 10 different color themes, each using a single uniform color for con
 | **Golden** | #EAB308 | Rich golden yellow tones | <img src="Color%20Packs/Golden/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Golden/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Golden/plex_always.svg" width="24" height="24" /> |
 | **Cobalt Blue** | #2563EB | Deep cobalt blue tones | <img src="Color%20Packs/Cobalt%20Blue/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Cobalt%20Blue/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Cobalt%20Blue/plex_always.svg" width="24" height="24" /> |
 | **Sage Green** | #9CAF88 | Soft sage green tones | <img src="Color%20Packs/Sage%20Green/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Sage%20Green/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Sage%20Green/plex_always.svg" width="24" height="24" /> |
+
+### 🎨 ThemePark Colors
+
+Perfect for users of [ThemePark](https://docs.theme-park.dev/) themes! These colors match the popular ThemePark theme palettes:
+
+| Pack | Color | Description | Example Icons |
+|------|-------|-------------|---------------|
+| **Overseerr Indigo** | #4F46E5 | Beautiful indigo color matching the Overseerr/Jellyseerr theme | <img src="Color%20Packs/Overseerr%20Indigo/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Overseerr%20Indigo/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Overseerr%20Indigo/plex_always.svg" width="24" height="24" /> |
+| **Nord Teal** | #79B8CA | Beautiful teal accent color from the Nord theme | <img src="Color%20Packs/Nord%20Teal/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Nord%20Teal/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Nord%20Teal/plex_always.svg" width="24" height="24" /> |
+| **Dracula Purple** | #BD93F9 | Vibrant purple from the Dracula theme | <img src="Color%20Packs/Dracula%20Purple/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Dracula%20Purple/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Dracula%20Purple/plex_always.svg" width="24" height="24" /> |
+| **Aquamarine Teal** | #7FDBDA | Fresh aquamarine color from the Aquamarine theme | <img src="Color%20Packs/Aquamarine%20Teal/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Aquamarine%20Teal/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Aquamarine%20Teal/plex_always.svg" width="24" height="24" /> |
+| **Space Gray** | #4A4A4A | Sophisticated gray from the Space Gray theme | <img src="Color%20Packs/Space%20Gray/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Space%20Gray/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Space%20Gray/plex_always.svg" width="24" height="24" /> |
+| **Plex Orange** | #E5A00D | Classic orange from the Plex theme | <img src="Color%20Packs/Plex%20Orange/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Plex%20Orange/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Plex%20Orange/plex_always.svg" width="24" height="24" /> |
+| **Hotline Pink** | #FF6B9D | Vibrant pink from the Hotline theme | <img src="Color%20Packs/Hotline%20Pink/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Hotline%20Pink/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Hotline%20Pink/plex_always.svg" width="24" height="24" /> |
+| **Maroon Red** | #8B0000 | Deep maroon from the Maroon theme | <img src="Color%20Packs/Maroon%20Red/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Maroon%20Red/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Maroon%20Red/plex_always.svg" width="24" height="24" /> |
 
 ## 📁 Directory Structure
 
