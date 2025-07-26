@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="code" viewBox="0 0 769 769" width="500" height="500" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" version="1.1">
+  <style id="type">
+    @keyframes left_bracket_f_o{0%{fill-opacity:1;animation-timing-function:step-end}15%,50%{fill-opacity:0;animation-timing-function:step-end}85%,to{fill-opacity:1}}@keyframes slash_f_o{0%{fill-opacity:1;animation-timing-function:step-end}25%,50%{fill-opacity:0;animation-timing-function:step-end}75%,to{fill-opacity:1}}@keyframes right_bracket_f_o{0%{fill-opacity:1;animation-timing-function:step-end}35%,50%{fill-opacity:0;animation-timing-function:step-end}65%,to{fill-opacity:1}}#code{pointer-events:all}#code *{animation-play-state:paused!important}#code:hover *{animation-play-state:running!important}#left_bracket{animation:left_bracket_f_o 2000ms linear infinite normal forwards}#slash{animation:slash_f_o 2000ms linear infinite normal forwards}#right_bracket{animation:right_bracket_f_o 2000ms linear infinite normal forwards}
+  </style>
+  <g id="background" transform="matrix(4 0 0 4 -808.48 -2293.246)">
+    <path id="square" d="M393.9 669.69v72.19c0 11.03-8.32 21.11-19.18 23.18-1.61.31-3.27.48-4.9.48-47.97.03-95.93.02-143.9.02-11.76 0-22.02-9.02-23.56-20.72a23.27 23.27 0 01-.23-3.12c-.01-48.09-.01-96.18-.01-144.26 0-11.03 8.32-21.12 19.18-23.18 1.61-.31 3.27-.48 4.9-.48 48.01-.02 96.02-.02 144.02-.02 11.03 0 21.13 8.33 23.18 19.18.3 1.61.48 3.27.48 4.9.02 23.95.02 47.89.02 71.83z" fill="#7C3AED" stroke="none" stroke-width="1"/>
+  </g>
+  <g id="code_top" transform="matrix(4 0 0 4 -808.464 -2293.226)">
+    <g id="code_group" fill="#FFF" stroke="none" stroke-width="1">
+      <path id="left_bracket" d="M390.85 668.23c-1.09 4.73-4.25 7.9-7.84 10.89-11.99 9.95-23.88 20.02-35.81 30.03-6.14 5.15-13.58 5.05-19.33-.25-5.33-4.9-5.77-14.14-.54-19.21 4.28-4.15 9-7.86 13.55-11.73 4.74-4.03 9.51-8.02 14.45-12.17l-9.21-7.91c-5.77-4.96-11.6-9.85-17.3-14.89-7.65-6.77-6.69-17.89 1.89-22.99 5.05-3 11.5-2.31 16.47 1.93 12.85 10.99 25.65 22.04 38.48 33.05 2.77 2.38 4.31 5.44 5.2 8.9-.01 1.45-.01 2.9-.01 4.35z"/>
+      <path id="slash" d="M321.65 611.84c-.64 3.37-1.5 8.05-2.41 12.71-3.82 19.76-7.65 39.51-11.47 59.27-3.05 15.79-6.05 31.6-9.17 47.38-1.21 6.13-4.9 10.24-11.1 11.47-5.62 1.12-10.38-.76-13.89-5.37-2.73-3.59-3.24-7.66-2.38-12.03 4.58-23.41 9.12-46.84 13.66-70.26 3.05-15.73 5.93-31.5 9.17-47.2 2.27-11.02 14.7-15.09 23.07-7.79 2.85 2.5 4.63 6.61 4.52 11.82z"/>
+      <path id="right_bracket" d="M240.63 665.74c7.22 6.06 14.29 11.91 21.23 17.89 2.95 2.55 6.08 5.07 8.36 8.17 3.71 5.04 2.58 12.59-1.89 16.91-4.99 4.81-12.28 5.77-17.53 1.83-5.26-3.95-10.2-8.31-15.25-12.54-8.2-6.86-16.35-13.77-24.54-20.64-5.45-4.57-7.29-10.41-4.71-16.61.91-2.2 2.52-4.32 4.32-5.89 12.65-11.05 25.4-21.97 38.17-32.87 7.91-6.76 18.91-4.27 22.66 5.24 2.02 5.12 1.24 10.22-2.71 14.1-4.95 4.85-10.37 9.22-15.62 13.78-3.69 3.21-7.42 6.37-11.14 9.55-.41.34-.84.67-1.35 1.08z"/>
+    </g>
+  </g>
+</svg>

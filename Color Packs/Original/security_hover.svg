@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="security" viewBox="0 0 769 769" width="500" height="500" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" version="1.1">
+  <style id="secure">
+    @keyframes shield_animation__ts{0%,50%,56.666667%,to{transform:translate(319.537322px,683.248836px) scale(1,1)}53.333333%{transform:translate(319.537322px,683.248836px) scale(.8,.8)}}@keyframes lock_top_animation__to{0%,53.333333%,to{transform:translate(319.226515px,660.27px)}3.333333%,50%{transform:translate(319.226515px,650.27px)}}#security{pointer-events:all}#security *{animation-play-state:paused!important}#security:hover *{animation-play-state:running!important}#shield_animation{animation:shield_animation__ts 3000ms linear infinite normal forwards}#lock_top_animation{animation:lock_top_animation__to 3000ms linear infinite normal forwards}
+  </style>
+  <g id="background" transform="matrix(4 0 0 4 -894.56 -2347.566)">
+    <path id="square" d="M415.42 683.27v72.19c0 11.03-8.32 21.11-19.18 23.18-1.61.31-3.27.48-4.9.48-47.97.03-95.93.02-143.9.02-11.76 0-22.02-9.02-23.56-20.72a23.27 23.27 0 01-.23-3.12c-.01-48.09-.01-96.18-.01-144.26 0-11.03 8.32-21.12 19.18-23.18 1.61-.31 3.27-.48 4.9-.48 48.01-.02 96.02-.02 144.02-.02 11.03 0 21.13 8.33 23.18 19.18.3 1.61.48 3.27.48 4.9.03 23.95.02 47.89.02 71.83z" fill="#D52727" stroke="none" stroke-width="1"/>
+  </g>
+  <g id="shield_lock_group" transform="matrix(4 0 0 4 -894.58 -2347.56)">
+    <g id="shield_animation" transform="translate(319.537 683.249)">
+      <path id="shield" d="M398.45 661.5c-.69 13.6-.66 27.28-2.22 40.78-2.69 23.13-14.64 41.09-34.57 52.78-12.62 7.4-26.37 12.88-39.7 19.05-1.43.66-3.68.75-5.09.11-13.22-6.07-26.89-11.43-39.39-18.77-24.68-14.48-35.85-37.37-36.58-65.45-.5-19.49-.15-39-.23-58.5-.01-3.42 1.55-5.66 4.59-7.04 23.57-10.7 47.11-21.47 70.75-32.01 1.85-.83 4.72-.8 6.58.03 23.51 10.49 46.93 21.21 70.38 31.83 3.37 1.53 4.92 3.94 4.88 7.69-.11 9.82-.04 19.64-.04 29.46.21.02.42.03.64.04z" transform="translate(-319.537 -683.249)" fill="#000" stroke="none" stroke-width="1"/>
+    </g>
+    <g id="lock_top_animation" transform="translate(319.227 660.27)">
+      <g id="lock_top" transform="translate(-435.413 -668.135)" stroke="none" stroke-width="1">
+        <path id="lock_top_main" d="M182.786 792.184c0-6.744.006-3.6-.004-9.998-.05-23.385-11.37-31.987-25.81-32.224-14.7-.236-26.28 8.524-26.54 32.224-.07 6.586 0 22.503 0 29.64-1.67 0 26.753-.015 25.553 0-7.09.127-11.04.201 0 0-9.845-.042-11.172.04 0 0 6.006-.028.569-.015 0 0 1.053.488-20.85.048 0 0 5.65-.015-1.899.109-7.96 0 7.545-.092 20.215-19.616 11.912-19.642 6.59.147 12.87.389 22.85 0z" transform="translate(278.84 -112.819)" fill="#FFF"/>
+        <path id="lock_top_hole" d="M306.22 679.646c0-6.752-.32-16.822 0-23.173.48-9.298 6.27-12.565 12.97-12.593 6.82-.041 12.69 3.074 13.1 12.593.26 6.184 0 16.518 0 23.187-8.62-.014-17.1-.014-26.07-.014z" transform="translate(116.168 6.74)" fill="#000"/>
+      </g>
+    </g>
+    <g id="lock_bottom" stroke="none" stroke-width="1">
+      <path id="lock_bottom_main" d="M345.44 668.613c.109.1-.105.149-.005-.079-.071.11-.107.12-26.264.08-14.7-.15-26.092.028-26.076 0 11.427-.091-4.38.058 0-.01-1.67 0-3.054 0-4.254.01-7.09.08-8.881 3.406-8.891 10.366-.02 13.9-.03 27.8.01 41.69.02 6.01 2.23 8.28 8.04 8.29 20.85.03 41.69.03 62.54 0 5.65-.01 7.94-2.32 7.95-7.95.03-12.54.02-25.07.03-37.61.01-12.77.03-14.007-13.08-14.787z" fill="#FFF"/>
+      <path id="lock_bottom_hole" d="M309.45 696.36c-.09-5.37 4.41-9.93 9.78-9.92 5.3.01 9.64 4.19 9.83 9.47.2 5.35-4.23 10.03-9.59 10.15-5.41.1-9.93-4.27-10.02-9.7z" fill="#000"/>
+    </g>
+  </g>
+</svg>

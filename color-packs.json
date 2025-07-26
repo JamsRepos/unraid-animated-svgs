@@ -1,0 +1,55 @@
+{
+  "colorPacks": {
+    "original": {
+      "name": "Original",
+      "description": "The original red color scheme",
+      "color": "#D52727"
+    },
+    "ocean_blue": {
+      "name": "Ocean Blue",
+      "description": "Cool blue tones for a modern look",
+      "color": "#2563EB"
+    },
+    "forest_green": {
+      "name": "Forest Green", 
+      "description": "Natural green tones",
+      "color": "#059669"
+    },
+    "royal_purple": {
+      "name": "Royal Purple",
+      "description": "Elegant purple and violet tones",
+      "color": "#7C3AED"
+    },
+    "teal_ocean": {
+      "name": "Teal Ocean",
+      "description": "Fresh teal and cyan tones",
+      "color": "#0D9488"
+    },
+    "rose_pink": {
+      "name": "Rose Pink",
+      "description": "Soft pink and rose tones",
+      "color": "#DB2777"
+    },
+    "modern_gray": {
+      "name": "Modern Gray",
+      "description": "Sophisticated gray tones",
+      "color": "#374151"
+    },
+    "sunny_yellow": {
+      "name": "Sunny Yellow",
+      "description": "Bright and cheerful yellow tones",
+      "color": "#D97706"
+    },
+    "deep_indigo": {
+      "name": "Deep Indigo",
+      "description": "Rich indigo and blue tones",
+      "color": "#4338CA"
+    },
+    "emerald_green": {
+      "name": "Emerald Green",
+      "description": "Vibrant emerald green tones",
+      "color": "#047857"
+    }
+  },
+  "defaultPack": "original"
+} 

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="dash" viewBox="0 0 769 769" width="500" height="500" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" version="1.1">
+  <style id="rev">
+    @keyframes dot_cover1_f_o{0%{fill-opacity:1;animation-timing-function:step-end}13.333333%{fill-opacity:0;animation-timing-function:step-end}90%,to{fill-opacity:1}}@keyframes dot_cover2_f_o{0%{fill-opacity:1;animation-timing-function:step-end}16.666667%{fill-opacity:0;animation-timing-function:step-end}70%,to{fill-opacity:1}}@keyframes dot_cover3_f_o{0%{fill-opacity:1;animation-timing-function:step-end}20%{fill-opacity:0;animation-timing-function:step-end}53.333333%,to{fill-opacity:1}}@keyframes dot_cover4_f_o{0%{fill-opacity:1;animation-timing-function:step-end}23.333333%{fill-opacity:0;animation-timing-function:step-end}33.333333%,to{fill-opacity:1}}@keyframes dial_animation1__to{0%{transform:translate(261.26px,670.825497px)}10%{transform:translate(261px,670.825497px)}13.333333%{transform:translate(266.530689px,651.093989px)}16.666667%{transform:translate(283.713202px,637px)}20%{transform:translate(305.592946px,633.551473px)}23.333333%{transform:translate(325.591465px,639.031651px)}33.333333%{transform:translate(314.46801px,633.384489px)}50%{transform:translate(296.971628px,634.413605px)}66.666667%{transform:translate(279.83188px,639.686618px)}83.333333%{transform:translate(267.182725px,654.503658px)}to{transform:translate(261.17px,670px)}}@keyframes dial_animation2__tr{0%,10%,to{transform:rotate(-120deg)}23.333333%{transform:rotate(0deg)}}#dash{pointer-events:all}#dash *{animation-play-state:paused!important}#dash:hover *{animation-play-state:running!important}#dot_cover1{animation:dot_cover1_f_o 3000ms linear infinite normal forwards}#dot_cover2{animation:dot_cover2_f_o 3000ms linear infinite normal forwards}#dot_cover3{animation:dot_cover3_f_o 3000ms linear infinite normal forwards}#dot_cover4{animation:dot_cover4_f_o 3000ms linear infinite normal forwards}#dial_animation1{animation:dial_animation1__to 3000ms linear infinite normal forwards}#dial_animation2{animation:dial_animation2__tr 3000ms linear infinite normal forwards}
+  </style>
+  <g id="background" transform="matrix(4 0 0 4 -821.126 -2304.686)">
+    <path id="square" d="M396.795 671.906v72.19c0 11.03-8.32 21.11-19.18 23.18-1.61.31-3.27.48-4.9.48-47.97.03-95.93.02-143.9.02-11.76 0-22.02-9.02-23.56-20.72a23.27 23.27 0 01-.23-3.12c-.01-48.09-.01-96.18-.01-144.26 0-11.03 8.32-21.12 19.18-23.18 1.61-.31 3.27-.48 4.9-.48 48.01-.02 96.02-.02 144.02-.02 11.03 0 21.13 8.33 23.18 19.18.3 1.61.48 3.27.48 4.9.03 23.95.02 47.89.02 71.83z" fill="#DB2777" stroke="none" stroke-width="1"/>
+  </g>
+  <g id="gauge_top" transform="matrix(3.5 0 0 3.5 -654.488 -1954.865)">
+    <g id="gauge_group">
+      <path id="gauge_border" d="M214.61 665.91c.54-3.35.89-6.74 1.65-10.04 8.33-36.11 30.35-59.3 66.31-68.07 25.71-6.27 51.08-1.17 72.51 14.38 8.74 6.135 14.454 13.828 15.244 14.458-5.57 4.27-1.555 23.401-14.984 14.373-6.364-9.433-14.625-15.815-33.57-22.151-37.66-12.25-78.21 11.75-85.78 50.57-7.08 36.34 15.83 71.19 52.22 78.73 36.1 7.48 70.65-15.51 78.68-50.86 2.36-10.38 2.15-20.73-.41-31.06-1.843-9.501-8.13-21.93-12.86-27.978-1.45-9.273-1.62-17.862 16.704-11.624 10.183 15.315 13.026 25.962 14.096 29.272 15.39 47.77-12.57 98.57-61.13 111.1-46.41 11.97-94.2-16.29-105.98-62.77-1.12-4.43-1.55-9.04-2.31-13.56-.08-.46-.26-.91-.39-1.37v-13.4z" fill="#000" stroke="none" stroke-width="1"/>
+      <g id="main_dots" stroke="none" stroke-width="1">
+        <path id="dot1" d="M344.52 643.31c.03-3.79 2.98-6.63 6.82-6.58 3.66.05 6.55 2.99 6.56 6.67 0 3.75-3 6.73-6.75 6.72-3.75-.03-6.66-3.01-6.63-6.81z" transform="translate(-2.73 1.49)" fill="#FFF"/>
+        <path id="dot2" d="M348.48 672.45c.04-3.77 3.01-6.61 6.86-6.55 3.65.06 6.53 3.02 6.52 6.7-.01 3.74-3.03 6.71-6.78 6.68-3.74-.02-6.64-3.02-6.6-6.83z" fill="#FFF"/>
+        <path id="dot3" d="M241.38 672.45c.05-3.77 3.01-6.6 6.85-6.54 3.65.06 6.53 3.02 6.52 6.7-.01 3.74-3.03 6.71-6.78 6.68-3.74-.03-6.63-3.03-6.59-6.84z" fill="#DB2777"/>
+        <path id="dot4" d="M254.87 639.12c3.74.04 6.66 3.07 6.59 6.84-.07 3.63-3.06 6.54-6.72 6.54-3.76 0-6.68-2.98-6.66-6.77.02-3.8 2.95-6.65 6.79-6.61z" fill="#DB2777"/>
+        <path id="dot5" d="M321.71 625.6c.03-3.79 2.98-6.63 6.82-6.58 3.66.05 6.55 2.99 6.56 6.67 0 3.75-3 6.73-6.75 6.72-3.76-.02-6.66-3.01-6.63-6.81z" fill="#DB2777"/>
+        <path id="dot6" d="M274.99 619.02c3.73.05 6.64 3.1 6.55 6.88-.08 3.62-3.09 6.52-6.75 6.5-3.75-.02-6.65-3.01-6.62-6.81.03-3.78 2.97-6.62 6.82-6.57z" fill="#DB2777"/>
+        <path id="dot7" d="M301.68 612.33c3.75.02 6.68 3.03 6.62 6.8-.05 3.64-3.02 6.56-6.68 6.58-3.76.01-6.71-2.95-6.7-6.73.03-3.81 2.94-6.68 6.76-6.65z" fill="#DB2777"/>
+      </g>
+      <g id="dot_covers" fill="#FFF" stroke="none" stroke-width="1">
+        <path id="dot_cover1" d="M254.87 639.12c3.74.04 6.66 3.07 6.59 6.84-.07 3.63-3.06 6.54-6.72 6.54-3.76 0-6.68-2.98-6.66-6.77.02-3.8 2.95-6.65 6.79-6.61z"/>
+        <path id="dot_cover2" d="M274.99 619.02c3.73.05 6.64 3.1 6.55 6.88-.08 3.62-3.09 6.52-6.75 6.5-3.75-.02-6.65-3.01-6.62-6.81.03-3.78 2.97-6.62 6.82-6.57z"/>
+        <path id="dot_cover3" d="M301.68 612.33c3.75.02 6.68 3.03 6.62 6.8-.05 3.64-3.02 6.56-6.68 6.58-3.76.01-6.71-2.95-6.7-6.73.03-3.81 2.94-6.68 6.76-6.65z"/>
+        <path id="dot_cover4" d="M321.71 625.6c.03-3.79 2.98-6.63 6.82-6.58 3.66.05 6.55 2.99 6.56 6.67 0 3.75-3 6.73-6.75 6.72-3.76-.02-6.66-3.01-6.63-6.81z"/>
+      </g>
+      <g id="dial_animation1" transform="translate(261.26 670.825)">
+        <g id="dial_animation2" transform="rotate(-120)">
+          <g id="dial_group" transform="translate(-336.067 -651.04)" stroke="none" stroke-width="1">
+            <path id="dial_border" d="M343.234 645.81c-3.021-2.013-8.389-5.975-7.537-5.642.258.233-.581-.01 0 0-.126.386-.067.027 0 0-.012-.025-.354.176 0 0 11.857-10.352 11.503-10.876 23.529-22.055.93-.777.887.619 2.038.263 1.91 1.277 4.265 2.35 6.495 3.682-.279 1.204 3.982 4.094 3.188 5.041-10.9 11.383-22.37 24.603-23.192 24.18.149-.231-.194-.046.02-.032-.066-.178-.243.105-.02.032.01-.195-3.534-5.59-4.52-5.469z" transform="matrix(1.5 0 0 1.5 -154.595 -329.615)" fill="#DB2777"/>
+            <path id="dial" d="M301.62 709.5c-12.2-.1-22.44-9.68-23.33-21.9-.88-12.04 7.86-22.91 19.96-24.62 2.24-.32 4.57-.16 6.83.02 1.35.11 2.31-.15 3.36-1.04 21.97-18.59 43.97-37.15 66.01-55.66 1.3-1.09 2.88-2.01 4.49-2.51 2.83-.87 5.49 1.57 4.82 4.46-.39 1.69-1.27 3.43-2.38 4.76-18.43 22.02-36.91 43.99-55.44 65.93-1.08 1.28-1.5 2.44-1.22 4.12 2 11.78-7.05 24.1-18.97 25.92-1.37.23-2.75.35-4.13.52z" transform="translate(10.928 -1.337)" fill="#000"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
