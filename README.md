@@ -62,7 +62,7 @@ Choose from 10 different color themes, each using a single uniform color for con
 
 ### 🎨 ThemePark Colors
 
-Perfect for users of [ThemePark](https://docs.theme-park.dev/) themes! These colors match the popular ThemePark theme palettes:
+Perfect for users of [ThemePark](https://github.com/themepark-dev/theme.park) themes! These colors match the popular ThemePark theme palettes:
 
 | Pack | Color | Description | Example Icons |
 |------|-------|-------------|---------------|
@@ -143,17 +143,17 @@ Simply copy and paste the URL of any icon into your FolderView plugin:
 
 **Ocean Blue Audio (Always Animate):**
 ```
-https://raw.githubusercontent.com/yourusername/unraid-animated-svgs/main/Color%20Packs/Ocean%20Blue/audio_always.svg
+https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/main/Color%20Packs/Ocean%20Blue/audio_always.svg
 ```
 
 **Forest Green Plex (Hover Animate):**
 ```
-https://raw.githubusercontent.com/yourusername/unraid-animated-svgs/main/Color%20Packs/Forest%20Green/plex_hover.svg
+https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/main/Color%20Packs/Forest%20Green/plex_hover.svg
 ```
 
 **Royal Purple Backup (Always Animate):**
 ```
-https://raw.githubusercontent.com/yourusername/unraid-animated-svgs/main/Color%20Packs/Royal%20Purple/backup_always.svg
+https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/main/Color%20Packs/Royal%20Purple/backup_always.svg
 ```
 
 ### URL Format
