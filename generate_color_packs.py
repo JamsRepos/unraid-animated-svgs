@@ -21,14 +21,14 @@ def get_original_colors():
     """Get the original colors used in the SVGs."""
     return [
         "#D52727",
-        "#FE8A30", 
+        "#FE8A30",
         "#F3632D"
     ]
 
 def replace_colors_in_svg(svg_content, new_color):
     """Replace all original colors in SVG content with the new color."""
     original_colors = get_original_colors()
-    
+
     for old_color in original_colors:
         # Replace the color in fill attributes
         svg_content = re.sub(
@@ -47,63 +47,59 @@ def replace_colors_in_svg(svg_content, new_color):
 def generate_color_variants():
     """Generate color variants for all SVG files."""
     config = load_color_packs()
-    
-    # Get all SVG files from both original directories
-    svg_dirs = ['Always Animate', 'Animate on Hover']
+
+    # Get all SVG files from the Original color pack
+    original_dir = 'Color Packs/Original'
     svg_files = []
-    
-    for svg_dir in svg_dirs:
-        if os.path.exists(svg_dir):
-            for file in os.listdir(svg_dir):
-                if file.endswith('.svg'):
-                    svg_files.append((svg_dir, file))
-    
+
+    if os.path.exists(original_dir):
+        for file in os.listdir(original_dir):
+            if file.endswith('.svg'):
+                svg_files.append(file)
+
     print(f"Found {len(svg_files)} SVG files to process")
-    
+
     # Process each color pack
     for pack_id, pack_info in config['colorPacks'].items():
         print(f"\nProcessing color pack: {pack_info['name']}")
-        
+
+        # Skip the Original pack as it's our source
+        if pack_id == 'original':
+            continue
+
         # Get the single color for this pack
         new_color = pack_info['color']
-        
+
         # Create output directory for this color pack
         output_dir = f"Color Packs/{pack_info['name']}"
         os.makedirs(output_dir, exist_ok=True)
-        
+
         # Process each SVG file
-        for svg_dir, svg_file in svg_files:
-            input_path = os.path.join(svg_dir, svg_file)
-            
-            # Create new filename with animation suffix
-            if svg_dir == 'Always Animate':
-                new_filename = svg_file.replace('.svg', '_always.svg')
-            else:  # Animate on Hover
-                new_filename = svg_file.replace('.svg', '_hover.svg')
-            
-            output_path = os.path.join(output_dir, new_filename)
-            
+        for svg_file in svg_files:
+            input_path = os.path.join(original_dir, svg_file)
+            output_path = os.path.join(output_dir, svg_file)
+
             try:
                 # Read the original SVG
                 with open(input_path, 'r', encoding='utf-8') as f:
                     svg_content = f.read()
-                
+
                 # Replace colors
                 new_svg_content = replace_colors_in_svg(svg_content, new_color)
-                
+
                 # Write the new SVG
                 with open(output_path, 'w', encoding='utf-8') as f:
                     f.write(new_svg_content)
-                
-                print(f"  Generated: {new_filename}")
-                
+
+                print(f"  Generated: {svg_file}")
+
             except Exception as e:
                 print(f"  Error processing {input_path}: {e}")
 
 def create_color_pack_preview():
     """Create a preview HTML file showing all color packs."""
     config = load_color_packs()
-    
+
     html_content = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -184,7 +180,7 @@ def create_color_pack_preview():
         <h1>Unraid Animated SVGs - Color Pack Preview</h1>
         <div class="color-packs">
 """
-    
+
     for pack_id, pack_info in config['colorPacks'].items():
         color = pack_info['color']
         html_content += f"""
@@ -200,34 +196,34 @@ def create_color_pack_preview():
                 <a href="Color Packs/{pack_info['name']}/" class="download-link">Download Pack</a>
             </div>
 """
-    
+
     html_content += """
         </div>
     </div>
 </body>
 </html>
 """
-    
+
     with open('color-pack-preview.html', 'w', encoding='utf-8') as f:
         f.write(html_content)
-    
+
     print("Created color pack preview: color-pack-preview.html")
 
 def main():
     """Main function to run the color pack generation."""
     print("Unraid Animated SVGs - Color Pack Generator (Clean Structure)")
     print("=" * 60)
-    
+
     # Generate color variants
     generate_color_variants()
-    
+
     # Create preview
     create_color_pack_preview()
-    
+
     print("\n" + "=" * 60)
     print("Color pack generation complete!")
     print("Check the 'Color Packs' directory for all variants.")
     print("Open 'color-pack-preview.html' to see a preview of all color packs.")
 
 if __name__ == "__main__":
-    main() 
+    main()

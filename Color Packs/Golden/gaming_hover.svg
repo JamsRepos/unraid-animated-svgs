@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="gaming" viewBox="0 0 769 769" width="500" height="500" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" version="1.1">
+  <style id="rumble">
+    @keyframes controller_animation_move__to{0%,33.333333%,40%,50%,56.666667%,66.666667%,73.333333%,to{transform:translate(384.499664px,385.427155px)}36.666667%{transform:translate(384.499963px,399.911284px)}53.333333%{transform:translate(384.5px,374.564058px)}70%{transform:translate(384.5px,398.100768px)}}@keyframes controller_animation_rotate__tr{0%,40%,56.666667%{transform:rotate(0deg);animation-timing-function:step-end}33.333333%,53.333333%,66.666667%{transform:rotate(-5deg);animation-timing-function:step-end}36.666667%,50%,70%{transform:rotate(5deg);animation-timing-function:step-end}73.333333%,to{transform:rotate(0deg)}}#gaming{pointer-events:all}#gaming *{animation-play-state:paused!important}#gaming:hover *{animation-play-state:running!important}#controller_animation_move{animation:controller_animation_move__to 3000ms linear infinite normal forwards}#controller_animation_rotate{animation:controller_animation_rotate__tr 3000ms linear infinite normal forwards}
+  </style>
+  <g id="background" transform="matrix(4 0 0 4 -842.943 -2257.326)">
+    <path id="sqaure" d="M402.75 660.71v72.19c0 11.03-8.32 21.11-19.18 23.18-1.61.31-3.27.48-4.9.48-47.97.03-95.93.02-143.9.02-11.76 0-22.02-9.02-23.56-20.72a23.27 23.27 0 01-.23-3.12c-.01-48.09-.01-96.18-.01-144.26 0-11.03 8.32-21.12 19.18-23.18 1.61-.31 3.27-.48 4.9-.48 48.01-.02 96.02-.02 144.02-.02 11.03 0 21.13 8.33 23.18 19.18.3 1.61.48 3.27.48 4.9.03 23.94.02 47.89.02 71.83z" fill="#EAB308" stroke="none" stroke-width="1"/>
+  </g>
+  <g id="controller_animation_move" transform="translate(384.5 385.427)">
+    <g id="controller_animation_rotate">
+      <g id="controller_group" transform="matrix(4 0 0 4 -1227.442 -2642.725)" stroke="none" stroke-width="1">
+        <path id="controller_body" d="M396.3 682.46c-1.75-14.77-5.25-29.18-9.59-43.38-2.93-9.59-6.35-19-12.14-27.31-8.13-11.66-19.25-17.05-33.48-15.27-3.64.46-7.2 1.58-10.75 2.57-11.14 3.12-22.45 4.43-33.91 2.59-6.41-1.03-12.73-2.65-19.03-4.25-11.59-2.94-22.14-1.05-31.46 6.55-5.53 4.52-9.15 10.52-12.18 16.88-4.88 10.23-7.96 21.07-10.73 32.01-3.7 14.61-6.57 29.36-6.66 44.51 0 1.82-.1 3.64.02 5.45.36 5.51.98 10.99 3.57 16 2.75 5.33 7.5 7.46 13.31 6 4.43-1.11 8.19-3.56 11.31-6.73 4.99-5.08 9.72-10.42 14.43-15.76 3.5-3.97 7.67-6.77 12.89-7.7 3.5-.63 7.06-1.21 10.6-1.24 16.55-.13 33.1-.09 49.65-.05 10.34.03 18.88 3.55 25.25 12.2 3.4 4.62 7.68 8.64 11.78 12.7 2.87 2.85 6.27 5.06 10.2 6.32 5.76 1.85 10.92.11 13.75-4.89 1.08-1.9 1.92-4.01 2.47-6.14 2.61-10.27 1.93-20.69.7-31.06z" fill="#FFF"/>
+        <path id="button1" d="M255.19 663.67c-8.75.02-15.88-7.16-15.85-15.96.03-8.85 7.1-15.9 15.91-15.87 8.84.04 15.72 7.06 15.7 16.02-.01 8.73-7.05 15.8-15.76 15.81z" fill="#000"/>
+        <path id="button2" d="M328.56 655.52c-4.38.03-7.79-3.36-7.79-7.75 0-4.29 3.34-7.72 7.58-7.77 4.32-.05 7.9 3.4 7.94 7.66.05 4.3-3.42 7.83-7.73 7.86z" fill="#000"/>
+        <path id="button3" d="M345.46 672.73c-4.27-.05-7.67-3.62-7.63-7.98.04-4.24 3.5-7.69 7.71-7.69 4.29.01 7.76 3.53 7.75 7.87-.02 4.31-3.58 7.85-7.83 7.8z" fill="#000"/>
+        <path id="button4" d="M345.5 638.42c-4.29-.02-7.71-3.53-7.68-7.9.03-4.27 3.41-7.67 7.66-7.7 4.32-.03 7.8 3.44 7.8 7.78.01 4.32-3.49 7.83-7.78 7.82z" fill="#000"/>
+        <path id="button5" d="M362.47 655.52a7.706 7.706 0 01-7.63-7.72c-.01-4.29 3.5-7.81 7.79-7.8 4.33.01 7.71 3.47 7.68 7.85-.03 4.4-3.44 7.73-7.84 7.67z" fill="#000"/>
+      </g>
+    </g>
+  </g>
+</svg>

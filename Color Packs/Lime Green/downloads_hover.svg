@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="downloads" viewBox="0 0 769 769" width="500" height="500" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" version="1.1">
+  <style id="point">
+    @keyframes download_arrow_animation__to{0%,to{transform:translate(0,0)}25%{transform:translate(0,6px)}75%{transform:translate(0,-6px)}}#downloads{pointer-events:all}#downloads *{animation-play-state:paused!important}#downloads:hover *{animation-play-state:running!important}#download_arrow_animation{animation:download_arrow_animation__to 800ms linear infinite normal forwards}
+  </style>
+  <g id="background" transform="matrix(4 0 0 4 -802.32 -2317.326)">
+    <path id="square" d="M392.83 675.71v72.19c0 11.03-8.32 21.11-19.18 23.18-1.61.31-3.27.48-4.9.48-47.97.03-95.93.02-143.9.02-11.76 0-22.02-9.02-23.56-20.72a23.27 23.27 0 01-.23-3.12c-.01-48.09-.01-96.18-.01-144.26 0-11.03 8.32-21.12 19.18-23.18 1.61-.31 3.27-.48 4.9-.48 48.01-.02 96.02-.02 144.02-.02 11.03 0 21.13 8.33 23.18 19.18.3 1.61.48 3.27.48 4.9.02 23.95.02 47.89.02 71.83z" fill="#84CC16" stroke="none" stroke-width="1"/>
+  </g>
+  <g id="download_top">
+    <g id="download_group" transform="matrix(4 0 0 4 -802.305 -2317.308)">
+      <g id="download_arrow_animation">
+        <path id="download_arrow" d="M272.1 646.38v-1.98c0-12.63.18-25.26-.07-37.88-.14-6.71 4.71-12.56 11.45-14.11.84-.19 1.72-.34 2.58-.34 7.24-.03 14.48-.05 21.72 0 6.42.04 12.43 4.92 13.77 11.17.28 1.31.29 2.7.3 4.05.02 12.36.01 24.71.01 37.07v1.93c.71.04 1.29.08 1.87.09 3.81.08 7.61.14 11.42.25.7.02 1.4.17 2.08.37 3.85 1.1 5.41 4.29 3.3 7.67-1.86 2.97-4.28 5.61-6.58 8.28-9.01 10.47-18.09 20.89-27.11 31.36-3.46 4.01-7.67 5.79-12.92 4.57-2.57-.6-4.66-2.05-6.38-4.03-10.9-12.58-21.8-25.17-32.67-37.77-.63-.73-1.17-1.58-1.61-2.45-1.77-3.5-.46-6.58 3.34-7.58 1.66-.44 3.43-.58 5.16-.63 3.36-.1 6.73-.04 10.34-.04z" fill="#FFF" stroke="none" stroke-width="1"/>
+      </g>
+      <path id="download_drive" d="M380.59 727.6c0-11.2-9.36-20.53-20.6-20.53H233.92c-6.84 0-12.22 2.97-16.44 8.23-2.23 2.77-3.26 6.06-4.2 9.4v16.99c.9 3.18 1.88 6.31 3.91 9.02 3.31 4.4 7.6 7.22 13.02 8.31.25.05.48.21.72.31h132.02c.24-.11.47-.26.71-.31 10-2.01 16.93-10.46 16.93-20.66V727.6zm-39.35 16.06c-5.82-.02-10.36-4.66-10.35-10.56.02-5.81 4.66-10.38 10.54-10.37 5.75.01 10.49 4.82 10.41 10.56-.07 5.8-4.78 10.4-10.6 10.37z" fill="#FFF" stroke="none" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

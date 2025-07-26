@@ -49,6 +49,106 @@
       "name": "Emerald Green",
       "description": "Vibrant emerald green tones",
       "color": "#047857"
+    },
+    "coral_red": {
+      "name": "Coral Red",
+      "description": "Warm coral red tones",
+      "color": "#F87171"
+    },
+    "sky_blue": {
+      "name": "Sky Blue",
+      "description": "Light sky blue tones",
+      "color": "#60A5FA"
+    },
+    "lime_green": {
+      "name": "Lime Green",
+      "description": "Bright lime green tones",
+      "color": "#84CC16"
+    },
+    "lavender": {
+      "name": "Lavender",
+      "description": "Soft lavender purple tones",
+      "color": "#A78BFA"
+    },
+    "cyan_blue": {
+      "name": "Cyan Blue",
+      "description": "Bright cyan blue tones",
+      "color": "#06B6D4"
+    },
+    "hot_pink": {
+      "name": "Hot Pink",
+      "description": "Vibrant hot pink tones",
+      "color": "#EC4899"
+    },
+    "charcoal": {
+      "name": "Charcoal",
+      "description": "Dark charcoal gray tones",
+      "color": "#1F2937"
+    },
+    "amber": {
+      "name": "Amber",
+      "description": "Warm amber orange tones",
+      "color": "#F59E0B"
+    },
+    "navy_blue": {
+      "name": "Navy Blue",
+      "description": "Deep navy blue tones",
+      "color": "#1E40AF"
+    },
+    "mint_green": {
+      "name": "Mint Green",
+      "description": "Fresh mint green tones",
+      "color": "#10B981"
+    },
+    "burgundy": {
+      "name": "Burgundy",
+      "description": "Rich burgundy red tones",
+      "color": "#991B1B"
+    },
+    "azure_blue": {
+      "name": "Azure Blue",
+      "description": "Bright azure blue tones",
+      "color": "#3B82F6"
+    },
+    "olive_green": {
+      "name": "Olive Green",
+      "description": "Natural olive green tones",
+      "color": "#65A30D"
+    },
+    "violet": {
+      "name": "Violet",
+      "description": "Pure violet purple tones",
+      "color": "#8B5CF6"
+    },
+    "turquoise": {
+      "name": "Turquoise",
+      "description": "Bright turquoise tones",
+      "color": "#14B8A6"
+    },
+    "magenta": {
+      "name": "Magenta",
+      "description": "Vibrant magenta tones",
+      "color": "#E11D48"
+    },
+    "slate_gray": {
+      "name": "Slate Gray",
+      "description": "Cool slate gray tones",
+      "color": "#475569"
+    },
+    "golden": {
+      "name": "Golden",
+      "description": "Rich golden yellow tones",
+      "color": "#EAB308"
+    },
+    "cobalt_blue": {
+      "name": "Cobalt Blue",
+      "description": "Deep cobalt blue tones",
+      "color": "#2563EB"
+    },
+    "sage_green": {
+      "name": "Sage Green",
+      "description": "Soft sage green tones",
+      "color": "#6B7280"
     }
   },
   "defaultPack": "original"
