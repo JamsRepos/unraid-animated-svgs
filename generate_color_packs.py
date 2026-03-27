@@ -104,6 +104,7 @@ def create_color_pack_preview():
     icon_files = sorted([file.name for file in original_dir.glob("*.svg")])
     # Preserve color pack definition order so index matches README ordering.
     sorted_packs = list(config["colorPacks"].items())
+    github_repo_base = "https://github.com/JamsRepos/unraid-animated-svgs"
     github_raw_base = (
         "https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master"
     )
@@ -142,7 +143,19 @@ def create_color_pack_preview():
         .subtitle {
             text-align: center;
             color: #666;
-            margin-bottom: 30px;
+            margin-bottom: 8px;
+        }
+        .repo-link {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .repo-link a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .repo-link a:hover {
+            text-decoration: underline;
         }
         .color-packs {
             display: grid;
@@ -282,6 +295,7 @@ def create_color_pack_preview():
     <div class="container">
         <h1>Unraid Animated SVGs - Color Pack Preview</h1>
         <p class="subtitle">Click any icon to copy its raw GitHub URL.</p>
+        <p class="repo-link"><a href="__GITHUB_REPO_BASE__" target="_blank" rel="noopener noreferrer">Open Repository on GitHub</a></p>
         <div class="color-packs">
 """
 
@@ -289,7 +303,7 @@ def create_color_pack_preview():
         color = pack_info["color"]
         pack_name = pack_info["name"]
         encoded_pack_name = quote(pack_name)
-        download_url = f"{github_raw_base}/Color%20Packs/{encoded_pack_name}/"
+        download_url = f"{github_repo_base}/tree/master/Color%20Packs/{encoded_pack_name}"
         html_content += f"""
             <div class="color-pack" data-pack-name="{pack_name}">
                 <div class="pack-header">
@@ -458,6 +472,7 @@ def create_color_pack_preview():
 """
     html_content = (
         html_content
+        .replace("__GITHUB_REPO_BASE__", github_repo_base)
         .replace("__GITHUB_RAW_BASE__", json.dumps(github_raw_base))
         .replace("__ICON_FILES__", json.dumps(icon_files))
         .replace("__PACKS__", json.dumps(packs_payload))
