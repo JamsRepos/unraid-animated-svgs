@@ -5,6 +5,11 @@
       "description": "The original red color scheme",
       "color": "#D52727"
     },
+    "unraid_orange": {
+      "name": "Unraid Orange",
+      "description": "Default Unraid platform accent orange",
+      "color": "#FE8A30"
+    },
     "ocean_blue": {
       "name": "Ocean Blue",
       "description": "Cool blue tones for a modern look",
@@ -191,5 +196,5 @@
       "color": "#8B0000"
     }
   },
-  "defaultPack": "original"
+  "defaultPack": "unraid_orange"
 } 

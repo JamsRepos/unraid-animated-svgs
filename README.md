@@ -8,7 +8,7 @@ A collection of animated SVG icons designed specifically for the **FolderView pl
 - **Two Animation Styles**:
   - **Always Animate**: Icons that continuously animate (suffix: `_always.svg`)
   - **Animate on Hover**: Icons that animate only when hovered over (suffix: `_hover.svg`)
-- **39 Color Packs**: Multiple color themes with uniform single-color design
+- **40 Color Packs**: Multiple color themes with uniform single-color design
 - **High Quality**: Vector graphics that scale perfectly at any size
 - **Lightweight**: Small file sizes for fast loading
 
@@ -25,11 +25,12 @@ Choose from 10 different color themes, each using a single uniform color for con
 
 ### 🎨 Available Color Packs
 
-**All 39 Color Variations Available!** Here's the complete collection:
+**All 40 Color Variations Available!** Here's the complete collection:
 
 | Pack | Color | Description | Example Icons |
 |------|-------|-------------|---------------|
 | **Original** | #D52727 | Classic red theme | <img src="Color%20Packs/Original/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Original/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Original/plex_always.svg" width="24" height="24" /> |
+| **Unraid Orange** | #FE8A30 | Default Unraid platform accent orange | <img src="Color%20Packs/Unraid%20Orange/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Unraid%20Orange/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Unraid%20Orange/plex_always.svg" width="24" height="24" /> |
 | **Ocean Blue** | #2563EB | Cool blue tones | <img src="Color%20Packs/Ocean%20Blue/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Ocean%20Blue/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Ocean%20Blue/plex_always.svg" width="24" height="24" /> |
 | **Forest Green** | #059669 | Natural green tones | <img src="Color%20Packs/Forest%20Green/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Forest%20Green/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Forest%20Green/plex_always.svg" width="24" height="24" /> |
 | **Royal Purple** | #7C3AED | Elegant purple tones | <img src="Color%20Packs/Royal%20Purple/audio_always.svg" width="24" height="24" /> <img src="Color%20Packs/Royal%20Purple/cloud_always.svg" width="24" height="24" /> <img src="Color%20Packs/Royal%20Purple/plex_always.svg" width="24" height="24" /> |
@@ -143,17 +144,17 @@ Simply copy and paste the URL of any icon into your FolderView plugin:
 
 **Ocean Blue Audio (Always Animate):**
 ```
-https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/main/Color%20Packs/Ocean%20Blue/audio_always.svg
+https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Ocean%20Blue/audio_always.svg
 ```
 
 **Forest Green Plex (Hover Animate):**
 ```
-https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/main/Color%20Packs/Forest%20Green/plex_hover.svg
+https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Forest%20Green/plex_hover.svg
 ```
 
 **Royal Purple Backup (Always Animate):**
 ```
-https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/main/Color%20Packs/Royal%20Purple/backup_always.svg
+https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Royal%20Purple/backup_always.svg
 ```
 
 ### URL Format

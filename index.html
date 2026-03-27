@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unraid Animated SVGs - Color Pack Preview</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .color-packs {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        .color-pack {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .color-pack h2 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        .color-pack p {
+            margin: 0 0 15px 0;
+            color: #666;
+            font-size: 14px;
+        }
+        .pack-header {
+            display: flex;
+            gap: 12px;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .pack-title-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .pack-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .color-sample {
+            width: 60px;
+            height: 40px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+        }
+        .icon-preview {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+        .icon-preview.is-empty {
+            min-height: 56px;
+        }
+        .pack-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .load-all-button {
+            border: 1px solid #cbd5e1;
+            background: #f8fafc;
+            color: #1f2937;
+            border-radius: 6px;
+            padding: 6px 10px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .load-all-button:hover {
+            background: #eef2ff;
+        }
+        .icon-count {
+            color: #6b7280;
+            font-size: 12px;
+        }
+        .loading-hint {
+            color: #6b7280;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+        .icon-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background: #fff;
+            padding: 2px;
+            cursor: pointer;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+        }
+        .icon-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.14);
+        }
+        .icon-button img {
+            width: 50px;
+            height: 50px;
+            pointer-events: none;
+        }
+        .download-link {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .download-link:hover {
+            background: #0056b3;
+        }
+        .copy-hint {
+            color: #555;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+        .copied-toast {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            background: #111827;
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.15s ease, transform 0.15s ease;
+        }
+        .copied-toast.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Unraid Animated SVGs - Color Pack Preview</h1>
+        <p class="subtitle">Click any icon to copy its raw GitHub URL.</p>
+        <div class="color-packs">
+
+            <div class="color-pack" data-pack-name="Original">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #D52727"></div>
+                        <div>
+                            <h2>Original</h2>
+                            <p>The original red color scheme (#D52727)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Original/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Unraid Orange">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #FE8A30"></div>
+                        <div>
+                            <h2>Unraid Orange</h2>
+                            <p>Default Unraid platform accent orange (#FE8A30)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Unraid%20Orange/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Ocean Blue">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #2563EB"></div>
+                        <div>
+                            <h2>Ocean Blue</h2>
+                            <p>Cool blue tones for a modern look (#2563EB)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Ocean%20Blue/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Forest Green">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #059669"></div>
+                        <div>
+                            <h2>Forest Green</h2>
+                            <p>Natural green tones (#059669)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Forest%20Green/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Royal Purple">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #7C3AED"></div>
+                        <div>
+                            <h2>Royal Purple</h2>
+                            <p>Elegant purple and violet tones (#7C3AED)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Royal%20Purple/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Teal Ocean">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #0D9488"></div>
+                        <div>
+                            <h2>Teal Ocean</h2>
+                            <p>Fresh teal and cyan tones (#0D9488)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Teal%20Ocean/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Rose Pink">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #DB2777"></div>
+                        <div>
+                            <h2>Rose Pink</h2>
+                            <p>Soft pink and rose tones (#DB2777)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Rose%20Pink/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Modern Gray">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #374151"></div>
+                        <div>
+                            <h2>Modern Gray</h2>
+                            <p>Sophisticated gray tones (#374151)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Modern%20Gray/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Sunny Yellow">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #D97706"></div>
+                        <div>
+                            <h2>Sunny Yellow</h2>
+                            <p>Bright and cheerful yellow tones (#D97706)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Sunny%20Yellow/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Deep Indigo">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #4338CA"></div>
+                        <div>
+                            <h2>Deep Indigo</h2>
+                            <p>Rich indigo and blue tones (#4338CA)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Deep%20Indigo/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Emerald Green">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #047857"></div>
+                        <div>
+                            <h2>Emerald Green</h2>
+                            <p>Vibrant emerald green tones (#047857)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Emerald%20Green/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Coral Red">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #F87171"></div>
+                        <div>
+                            <h2>Coral Red</h2>
+                            <p>Warm coral red tones (#F87171)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Coral%20Red/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Sky Blue">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #60A5FA"></div>
+                        <div>
+                            <h2>Sky Blue</h2>
+                            <p>Light sky blue tones (#60A5FA)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Sky%20Blue/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Lime Green">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #84CC16"></div>
+                        <div>
+                            <h2>Lime Green</h2>
+                            <p>Bright lime green tones (#84CC16)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Lime%20Green/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Lavender">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #A78BFA"></div>
+                        <div>
+                            <h2>Lavender</h2>
+                            <p>Soft lavender purple tones (#A78BFA)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Lavender/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Cyan Blue">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #06B6D4"></div>
+                        <div>
+                            <h2>Cyan Blue</h2>
+                            <p>Bright cyan blue tones (#06B6D4)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Cyan%20Blue/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Hot Pink">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #EC4899"></div>
+                        <div>
+                            <h2>Hot Pink</h2>
+                            <p>Vibrant hot pink tones (#EC4899)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Hot%20Pink/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Charcoal">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #1F2937"></div>
+                        <div>
+                            <h2>Charcoal</h2>
+                            <p>Dark charcoal gray tones (#1F2937)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Charcoal/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Amber">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #F59E0B"></div>
+                        <div>
+                            <h2>Amber</h2>
+                            <p>Warm amber orange tones (#F59E0B)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Amber/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Navy Blue">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #1E40AF"></div>
+                        <div>
+                            <h2>Navy Blue</h2>
+                            <p>Deep navy blue tones (#1E40AF)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Navy%20Blue/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Mint Green">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #10B981"></div>
+                        <div>
+                            <h2>Mint Green</h2>
+                            <p>Fresh mint green tones (#10B981)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Mint%20Green/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Burgundy">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #991B1B"></div>
+                        <div>
+                            <h2>Burgundy</h2>
+                            <p>Rich burgundy red tones (#991B1B)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Burgundy/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Azure Blue">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #3B82F6"></div>
+                        <div>
+                            <h2>Azure Blue</h2>
+                            <p>Bright azure blue tones (#3B82F6)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Azure%20Blue/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Olive Green">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #65A30D"></div>
+                        <div>
+                            <h2>Olive Green</h2>
+                            <p>Natural olive green tones (#65A30D)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Olive%20Green/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Violet">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #8B5CF6"></div>
+                        <div>
+                            <h2>Violet</h2>
+                            <p>Pure violet purple tones (#8B5CF6)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Violet/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Turquoise">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #14B8A6"></div>
+                        <div>
+                            <h2>Turquoise</h2>
+                            <p>Bright turquoise tones (#14B8A6)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Turquoise/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Magenta">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #E11D48"></div>
+                        <div>
+                            <h2>Magenta</h2>
+                            <p>Vibrant magenta tones (#E11D48)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Magenta/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Slate Gray">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #475569"></div>
+                        <div>
+                            <h2>Slate Gray</h2>
+                            <p>Cool slate gray tones (#475569)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Slate%20Gray/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Golden">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #EAB308"></div>
+                        <div>
+                            <h2>Golden</h2>
+                            <p>Rich golden yellow tones (#EAB308)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Golden/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Cobalt Blue">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #2563EB"></div>
+                        <div>
+                            <h2>Cobalt Blue</h2>
+                            <p>Deep cobalt blue tones (#2563EB)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Cobalt%20Blue/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Sage Green">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #9CAF88"></div>
+                        <div>
+                            <h2>Sage Green</h2>
+                            <p>Soft sage green tones (#9CAF88)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Sage%20Green/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Overseerr Indigo">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #4F46E5"></div>
+                        <div>
+                            <h2>Overseerr Indigo</h2>
+                            <p>Beautiful indigo color matching the Overseerr/Jellyseerr theme (#4F46E5)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Overseerr%20Indigo/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Nord Teal">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #79B8CA"></div>
+                        <div>
+                            <h2>Nord Teal</h2>
+                            <p>Beautiful teal accent color from the Nord theme (#79B8CA)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Nord%20Teal/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Dracula Purple">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #BD93F9"></div>
+                        <div>
+                            <h2>Dracula Purple</h2>
+                            <p>Vibrant purple from the Dracula theme (#BD93F9)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Dracula%20Purple/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Aquamarine Teal">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #7FDBDA"></div>
+                        <div>
+                            <h2>Aquamarine Teal</h2>
+                            <p>Fresh aquamarine color from the Aquamarine theme (#7FDBDA)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Aquamarine%20Teal/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Space Gray">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #4A4A4A"></div>
+                        <div>
+                            <h2>Space Gray</h2>
+                            <p>Sophisticated gray from the Space Gray theme (#4A4A4A)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Space%20Gray/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Plex Orange">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #E5A00D"></div>
+                        <div>
+                            <h2>Plex Orange</h2>
+                            <p>Classic orange from the Plex theme (#E5A00D)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Plex%20Orange/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Hotline Pink">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #FF6B9D"></div>
+                        <div>
+                            <h2>Hotline Pink</h2>
+                            <p>Vibrant pink from the Hotline theme (#FF6B9D)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Hotline%20Pink/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+            <div class="color-pack" data-pack-name="Maroon Red">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: #8B0000"></div>
+                        <div>
+                            <h2>Maroon Red</h2>
+                            <p>Deep maroon from the Maroon theme (#8B0000)</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master/Color%20Packs/Maroon%20Red/" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
+                </div>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="copied-toast" id="copiedToast">Copied icon URL</div>
+    <script>
+        const GITHUB_RAW_BASE = "https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master";
+        const ICON_FILES = ["audio_always.svg", "audio_hover.svg", "backup_always.svg", "backup_hover.svg", "binoculars_always.svg", "binoculars_hover.svg", "books_always.svg", "books_hover.svg", "cloud_always.svg", "cloud_hover.svg", "code_always.svg", "code_hover.svg", "control_always.svg", "control_hover.svg", "dash_always.svg", "dash_hover.svg", "database_always.svg", "database_hover.svg", "dependencies_always.svg", "dependencies_hover.svg", "downloads_always.svg", "downloads_hover.svg", "eye_always.svg", "eye_hover.svg", "gaming_always.svg", "gaming_hover.svg", "grafana_always.svg", "grafana_hover.svg", "home-automation_always.svg", "home-automation_hover.svg", "home-wifi_always.svg", "home-wifi_hover.svg", "multimedia-alternate_always.svg", "multimedia-alternate_hover.svg", "multimedia_always.svg", "multimedia_hover.svg", "music_always.svg", "music_hover.svg", "network_always.svg", "network_hover.svg", "nzb_always.svg", "nzb_hover.svg", "pirate_always.svg", "pirate_hover.svg", "plex_always.svg", "plex_hover.svg", "productivity_always.svg", "productivity_hover.svg", "search_always.svg", "search_hover.svg", "security_always.svg", "security_hover.svg", "settings_always.svg", "settings_hover.svg", "ship_always.svg", "ship_hover.svg", "torrent_always.svg", "torrent_hover.svg", "vpn_always.svg", "vpn_hover.svg", "world_always.svg", "world_hover.svg"];
+        const PREVIEW_ICON_COUNT = 12;
+        const CHUNK_SIZE = 12;
+        const copiedToast = document.getElementById('copiedToast');
+
+        function showCopiedToast(message) {
+            copiedToast.textContent = message;
+            copiedToast.classList.add('visible');
+            window.clearTimeout(showCopiedToast._timer);
+            showCopiedToast._timer = window.setTimeout(() => {
+                copiedToast.classList.remove('visible');
+            }, 1400);
+        }
+
+        async function copyToClipboard(text) {
+            try {
+                await navigator.clipboard.writeText(text);
+                showCopiedToast('Copied icon URL');
+            } catch (err) {
+                // Fallback for contexts where clipboard API is unavailable.
+                const helper = document.createElement('textarea');
+                helper.value = text;
+                helper.setAttribute('readonly', '');
+                helper.style.position = 'fixed';
+                helper.style.opacity = '0';
+                document.body.appendChild(helper);
+                helper.select();
+                document.execCommand('copy');
+                document.body.removeChild(helper);
+                showCopiedToast('Copied icon URL');
+            }
+        }
+
+        function buildIconButton(packName, iconFile) {
+            const iconLabel = iconFile.replace('.svg', '');
+            const encodedPack = encodeURIComponent(packName);
+            const encodedIcon = encodeURIComponent(iconFile);
+            const rawUrl = `${GITHUB_RAW_BASE}/Color%20Packs/${encodedPack}/${encodedIcon}`;
+            const localSrc = `Color Packs/${packName}/${iconFile}`;
+
+            const button = document.createElement('button');
+            button.className = 'icon-button';
+            button.title = `Copy URL: ${iconLabel}`;
+            button.setAttribute('data-url', rawUrl);
+            button.addEventListener('click', () => copyToClipboard(rawUrl));
+
+            const img = document.createElement('img');
+            img.alt = iconLabel;
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            img.src = localSrc;
+            button.appendChild(img);
+            return button;
+        }
+
+        function updateIconCount(packCard, loadedCount) {
+            const countEl = packCard.querySelector('[data-icon-count]');
+            if (!countEl) {
+                return;
+            }
+            countEl.textContent = `${loadedCount} of ${ICON_FILES.length} loaded`;
+        }
+
+        function renderPackIcons(packCard, limit = PREVIEW_ICON_COUNT) {
+            if (packCard.dataset.iconsRendered === 'true' && limit <= Number(packCard.dataset.iconsLoaded || 0)) {
+                return;
+            }
+            const packName = packCard.dataset.packName;
+            const container = packCard.querySelector('[data-icon-container]');
+            const loadedSoFar = Number(packCard.dataset.iconsLoaded || 0);
+            const targetCount = Math.min(limit, ICON_FILES.length);
+
+            if (loadedSoFar >= targetCount) {
+                return;
+            }
+
+            const fragment = document.createDocumentFragment();
+            ICON_FILES.slice(loadedSoFar, targetCount).forEach((iconFile) => {
+                fragment.appendChild(buildIconButton(packName, iconFile));
+            });
+            container.appendChild(fragment);
+            container.classList.remove('is-empty');
+            packCard.dataset.iconsLoaded = String(targetCount);
+            packCard.dataset.iconsRendered = String(targetCount >= ICON_FILES.length);
+            updateIconCount(packCard, targetCount);
+        }
+
+        function renderAllIcons(packCard) {
+            const loadButton = packCard.querySelector('[data-load-all]');
+            if (loadButton) {
+                loadButton.disabled = true;
+                loadButton.textContent = 'Loading...';
+            }
+
+            const step = () => {
+                const loaded = Number(packCard.dataset.iconsLoaded || 0);
+                if (loaded >= ICON_FILES.length) {
+                    if (loadButton) {
+                        loadButton.textContent = 'All icons loaded';
+                    }
+                    return;
+                }
+                renderPackIcons(packCard, loaded + CHUNK_SIZE);
+                window.requestAnimationFrame(step);
+            };
+
+            step();
+        }
+
+        const packCards = Array.from(document.querySelectorAll('.color-pack'));
+        const packObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+                renderPackIcons(entry.target);
+                observer.unobserve(entry.target);
+            });
+        }, { rootMargin: '300px 0px' });
+
+        packCards.forEach((card, index) => {
+            updateIconCount(card, 0);
+            const loadAllButton = card.querySelector('[data-load-all]');
+            if (loadAllButton) {
+                loadAllButton.addEventListener('click', () => renderAllIcons(card));
+            }
+            if (index < 1) {
+                renderPackIcons(card, PREVIEW_ICON_COUNT);
+                return;
+            }
+            packObserver.observe(card);
+        });
+    </script>
+</body>
+</html>

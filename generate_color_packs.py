@@ -11,6 +11,7 @@ import os
 import re
 import shutil
 from pathlib import Path
+from urllib.parse import quote
 
 def load_color_packs():
     """Load color packs from the configuration file."""
@@ -99,6 +100,22 @@ def generate_color_variants():
 def create_color_pack_preview():
     """Create a preview HTML file showing all color packs."""
     config = load_color_packs()
+    original_dir = Path("Color Packs/Original")
+    icon_files = sorted([file.name for file in original_dir.glob("*.svg")])
+    # Preserve color pack definition order so index matches README ordering.
+    sorted_packs = list(config["colorPacks"].items())
+    github_raw_base = (
+        "https://raw.githubusercontent.com/JamsRepos/unraid-animated-svgs/refs/heads/master"
+    )
+
+    packs_payload = [
+        {
+            "name": pack_info["name"],
+            "description": pack_info["description"],
+            "color": pack_info["color"],
+        }
+        for _, pack_info in sorted_packs
+    ]
 
     html_content = """<!DOCTYPE html>
 <html lang="en">
@@ -114,18 +131,23 @@ def create_color_pack_preview():
             background: #f5f5f5;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1440px;
             margin: 0 auto;
         }
         h1 {
             text-align: center;
             color: #333;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
             margin-bottom: 30px;
         }
         .color-packs {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr;
+            gap: 16px;
         }
         .color-pack {
             background: white;
@@ -142,23 +164,83 @@ def create_color_pack_preview():
             color: #666;
             font-size: 14px;
         }
+        .pack-header {
+            display: flex;
+            gap: 12px;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .pack-title-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .pack-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
         .color-sample {
             width: 60px;
             height: 40px;
             border-radius: 8px;
             border: 2px solid #ddd;
-            margin-bottom: 15px;
         }
         .icon-preview {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
+            margin-top: 12px;
         }
-        .icon-preview img {
+        .icon-preview.is-empty {
+            min-height: 56px;
+        }
+        .pack-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .load-all-button {
+            border: 1px solid #cbd5e1;
+            background: #f8fafc;
+            color: #1f2937;
+            border-radius: 6px;
+            padding: 6px 10px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .load-all-button:hover {
+            background: #eef2ff;
+        }
+        .icon-count {
+            color: #6b7280;
+            font-size: 12px;
+        }
+        .loading-hint {
+            color: #6b7280;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+        .icon-button {
             width: 50px;
             height: 50px;
             border-radius: 8px;
             border: 1px solid #ddd;
+            background: #fff;
+            padding: 2px;
+            cursor: pointer;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+        }
+        .icon-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.14);
+        }
+        .icon-button img {
+            width: 50px;
+            height: 50px;
+            pointer-events: none;
         }
         .download-link {
             display: inline-block;
@@ -168,46 +250,224 @@ def create_color_pack_preview():
             text-decoration: none;
             border-radius: 5px;
             font-size: 14px;
-            margin-top: 10px;
         }
         .download-link:hover {
             background: #0056b3;
+        }
+        .copy-hint {
+            color: #555;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+        .copied-toast {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            background: #111827;
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.15s ease, transform 0.15s ease;
+        }
+        .copied-toast.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Unraid Animated SVGs - Color Pack Preview</h1>
+        <p class="subtitle">Click any icon to copy its raw GitHub URL.</p>
         <div class="color-packs">
 """
 
-    for pack_id, pack_info in config['colorPacks'].items():
-        color = pack_info['color']
+    for _, pack_info in sorted_packs:
+        color = pack_info["color"]
+        pack_name = pack_info["name"]
+        encoded_pack_name = quote(pack_name)
+        download_url = f"{github_raw_base}/Color%20Packs/{encoded_pack_name}/"
         html_content += f"""
-            <div class="color-pack">
-                <h2>{pack_info['name']}</h2>
-                <p>{pack_info['description']}</p>
-                <div class="color-sample" style="background-color: {color}"></div>
-                <div class="icon-preview">
-                    <img src="Color Packs/{pack_info['name']}/audio_always.svg" alt="Audio icon">
-                    <img src="Color Packs/{pack_info['name']}/cloud_always.svg" alt="Cloud icon">
-                    <img src="Color Packs/{pack_info['name']}/backup_always.svg" alt="Backup icon">
+            <div class="color-pack" data-pack-name="{pack_name}">
+                <div class="pack-header">
+                    <div class="pack-title-group">
+                        <div class="color-sample" style="background-color: {color}"></div>
+                        <div>
+                            <h2>{pack_name}</h2>
+                            <p>{pack_info['description']} ({color})</p>
+                        </div>
+                    </div>
+                    <div class="pack-actions">
+                        <a href="{download_url}" class="download-link" target="_blank" rel="noopener noreferrer">&#x2B07; Download Pack</a>
+                    </div>
                 </div>
-                <a href="Color Packs/{pack_info['name']}/" class="download-link">Download Pack</a>
+                <div class="icon-preview is-empty" data-icon-container></div>
+                <div class="pack-controls">
+                    <button class="load-all-button" data-load-all type="button">Load all icons</button>
+                    <span class="icon-count" data-icon-count>0 of 0 loaded</span>
+                </div>
+                <p class="loading-hint">A small preview loads first for speed.</p>
+                <p class="copy-hint">Click any icon to copy its direct URL.</p>
             </div>
 """
 
     html_content += """
         </div>
     </div>
+    <div class="copied-toast" id="copiedToast">Copied icon URL</div>
+    <script>
+        const GITHUB_RAW_BASE = __GITHUB_RAW_BASE__;
+        const ICON_FILES = __ICON_FILES__;
+        const PREVIEW_ICON_COUNT = 12;
+        const CHUNK_SIZE = 12;
+        const copiedToast = document.getElementById('copiedToast');
+
+        function showCopiedToast(message) {
+            copiedToast.textContent = message;
+            copiedToast.classList.add('visible');
+            window.clearTimeout(showCopiedToast._timer);
+            showCopiedToast._timer = window.setTimeout(() => {
+                copiedToast.classList.remove('visible');
+            }, 1400);
+        }
+
+        async function copyToClipboard(text) {
+            try {
+                await navigator.clipboard.writeText(text);
+                showCopiedToast('Copied icon URL');
+            } catch (err) {
+                // Fallback for contexts where clipboard API is unavailable.
+                const helper = document.createElement('textarea');
+                helper.value = text;
+                helper.setAttribute('readonly', '');
+                helper.style.position = 'fixed';
+                helper.style.opacity = '0';
+                document.body.appendChild(helper);
+                helper.select();
+                document.execCommand('copy');
+                document.body.removeChild(helper);
+                showCopiedToast('Copied icon URL');
+            }
+        }
+
+        function buildIconButton(packName, iconFile) {
+            const iconLabel = iconFile.replace('.svg', '');
+            const encodedPack = encodeURIComponent(packName);
+            const encodedIcon = encodeURIComponent(iconFile);
+            const rawUrl = `${GITHUB_RAW_BASE}/Color%20Packs/${encodedPack}/${encodedIcon}`;
+            const localSrc = `Color Packs/${packName}/${iconFile}`;
+
+            const button = document.createElement('button');
+            button.className = 'icon-button';
+            button.title = `Copy URL: ${iconLabel}`;
+            button.setAttribute('data-url', rawUrl);
+            button.addEventListener('click', () => copyToClipboard(rawUrl));
+
+            const img = document.createElement('img');
+            img.alt = iconLabel;
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            img.src = localSrc;
+            button.appendChild(img);
+            return button;
+        }
+
+        function updateIconCount(packCard, loadedCount) {
+            const countEl = packCard.querySelector('[data-icon-count]');
+            if (!countEl) {
+                return;
+            }
+            countEl.textContent = `${loadedCount} of ${ICON_FILES.length} loaded`;
+        }
+
+        function renderPackIcons(packCard, limit = PREVIEW_ICON_COUNT) {
+            if (packCard.dataset.iconsRendered === 'true' && limit <= Number(packCard.dataset.iconsLoaded || 0)) {
+                return;
+            }
+            const packName = packCard.dataset.packName;
+            const container = packCard.querySelector('[data-icon-container]');
+            const loadedSoFar = Number(packCard.dataset.iconsLoaded || 0);
+            const targetCount = Math.min(limit, ICON_FILES.length);
+
+            if (loadedSoFar >= targetCount) {
+                return;
+            }
+
+            const fragment = document.createDocumentFragment();
+            ICON_FILES.slice(loadedSoFar, targetCount).forEach((iconFile) => {
+                fragment.appendChild(buildIconButton(packName, iconFile));
+            });
+            container.appendChild(fragment);
+            container.classList.remove('is-empty');
+            packCard.dataset.iconsLoaded = String(targetCount);
+            packCard.dataset.iconsRendered = String(targetCount >= ICON_FILES.length);
+            updateIconCount(packCard, targetCount);
+        }
+
+        function renderAllIcons(packCard) {
+            const loadButton = packCard.querySelector('[data-load-all]');
+            if (loadButton) {
+                loadButton.disabled = true;
+                loadButton.textContent = 'Loading...';
+            }
+
+            const step = () => {
+                const loaded = Number(packCard.dataset.iconsLoaded || 0);
+                if (loaded >= ICON_FILES.length) {
+                    if (loadButton) {
+                        loadButton.textContent = 'All icons loaded';
+                    }
+                    return;
+                }
+                renderPackIcons(packCard, loaded + CHUNK_SIZE);
+                window.requestAnimationFrame(step);
+            };
+
+            step();
+        }
+
+        const packCards = Array.from(document.querySelectorAll('.color-pack'));
+        const packObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+                renderPackIcons(entry.target);
+                observer.unobserve(entry.target);
+            });
+        }, { rootMargin: '300px 0px' });
+
+        packCards.forEach((card, index) => {
+            updateIconCount(card, 0);
+            const loadAllButton = card.querySelector('[data-load-all]');
+            if (loadAllButton) {
+                loadAllButton.addEventListener('click', () => renderAllIcons(card));
+            }
+            if (index < 1) {
+                renderPackIcons(card, PREVIEW_ICON_COUNT);
+                return;
+            }
+            packObserver.observe(card);
+        });
+    </script>
 </body>
 </html>
 """
+    html_content = (
+        html_content
+        .replace("__GITHUB_RAW_BASE__", json.dumps(github_raw_base))
+        .replace("__ICON_FILES__", json.dumps(icon_files))
+        .replace("__PACKS__", json.dumps(packs_payload))
+    )
 
-    with open('color-pack-preview.html', 'w', encoding='utf-8') as f:
+    # GitHub Pages serves index.html at the repository root by default.
+    with open('index.html', 'w', encoding='utf-8') as f:
         f.write(html_content)
 
-    print("Created color pack preview: color-pack-preview.html")
+    print("Created GitHub Pages entry point: index.html")
 
 def main():
     """Main function to run the color pack generation."""
@@ -223,7 +483,7 @@ def main():
     print("\n" + "=" * 60)
     print("Color pack generation complete!")
     print("Check the 'Color Packs' directory for all variants.")
-    print("Open 'color-pack-preview.html' to see a preview of all color packs.")
+    print("Open 'index.html' to see a preview of all color packs.")
 
 if __name__ == "__main__":
     main()
